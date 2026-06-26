@@ -1,8 +1,8 @@
 /**
  * Footer.js - Site-wide footer with links and branding.
  */
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
