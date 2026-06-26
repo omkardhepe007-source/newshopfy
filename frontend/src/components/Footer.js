@@ -90,18 +90,6 @@ const Footer = () => {
               <i className="bi bi-telephone me-2"></i>+91 9322347102
             </p>
             <div className="mt-3">
-              <a href="#" className="text-white-50 me-3 fs-5">
-                <i className="bi bi-facebook"></i>
-              </a>
-
-              <a href="#" className="text-white-50 me-3 fs-5">
-                <i className="bi bi-twitter-x"></i>
-              </a>
-
-              <a href="#" className="text-white-50 me-3 fs-5">
-                <i className="bi bi-instagram"></i>
-              </a>
-
               <a
                 href="https://www.linkedin.com/in/omkar-dhepe-b57a56311"
                 target="_blank"
@@ -109,6 +97,20 @@ const Footer = () => {
                 className="text-white-50 me-3 fs-5"
               >
                 <i className="bi bi-linkedin"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/omkar_dh?igsh=MWx0MTN0dWI4anF0eQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white-50 me-3 fs-5"
+              >
+                <i className="bi bi-instagram"></i>
+              </a>
+
+              <a href="mailto:omkardhepe007@gmail.com"
+                className="text-white-50 me-3 fs-5">
+                <i className="bi bi-envelope-fill"></i>
               </a>
             </div>
           </div>

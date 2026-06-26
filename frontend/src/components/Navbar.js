@@ -102,9 +102,10 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item dropdown">
                   <button
+                    type="button"
                     className="nav-link dropdown-toggle btn btn-link"
-                    role="button"
                     data-bs-toggle="dropdown"
+                    aria-expanded="false"
                     style={{
                       textDecoration: "none",
                       border: "none",
@@ -116,21 +117,26 @@ const Navbar = () => {
                     <i className="bi bi-person-circle me-1"></i>
                     {user?.fullName?.split(" ")[0]}
                   </button>
+
                   <ul className="dropdown-menu dropdown-menu-end">
                     <li>
                       <Link className="dropdown-item" to="/profile">
                         <i className="bi bi-person me-2"></i>My Profile
                       </Link>
                     </li>
+
                     <li>
                       <hr className="dropdown-divider" />
                     </li>
+
                     <li>
                       <button
+                        type="button"
                         className="dropdown-item text-danger"
                         onClick={handleLogout}
                       >
-                        <i className="bi bi-box-arrow-right me-2"></i>Logout
+                        <i className="bi bi-box-arrow-right me-2"></i>
+                        Logout
                       </button>
                     </li>
                   </ul>
