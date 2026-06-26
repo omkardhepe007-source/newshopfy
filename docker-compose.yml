@@ -1,0 +1,37 @@
+version: "3.8"
+
+# ============================================================
+# ShopEasy Docker Compose - Using Aiven Cloud MySQL
+# Services:
+#   backend  - Spring Boot API
+#   frontend - React app served by Nginx
+# Note: MySQL is hosted on Aiven (no local mysql container needed)
+# ============================================================
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: shopeasy-backend
+    restart: unless-stopped
+    environment:
+      SPRING_DATASOURCE_URL: ${DB_URL:jdbc:mysql://localhost:3306/shopeasy}
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME:root}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:}
+      APP_JWT_SECRET: ${JWT_SECRET:your-jwt-secret-key-here}
+      APP_JWT_EXPIRATION: 86400000
+      APP_CORS_ALLOWED_ORIGINS: http://localhost
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: shopeasy-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
