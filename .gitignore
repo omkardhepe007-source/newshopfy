@@ -1,0 +1,18 @@
+# ===========================
+# NEVER commit these to GitHub
+# ===========================
+.env
+*.env
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+mysql_data/
