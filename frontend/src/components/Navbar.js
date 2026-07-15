@@ -7,9 +7,9 @@
  *
  * Uses Bootstrap 5 navbar with responsive collapse for mobile.
  */
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
   const { isAuthenticated, isAdmin, user, logout } = useAuth();
@@ -17,18 +17,27 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top"
+      style={{
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      }}
+    >
       <div className="container">
         <Link className="navbar-brand fw-bold fs-4" to="/">
           <i className="bi bi-bag-heart-fill me-2"></i>ShopEasy
         </Link>
 
-        <button className="navbar-toggler" type="button"
-          data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
 
@@ -69,7 +78,10 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="btn btn-light btn-sm ms-2 px-3" to="/register">
+                  <Link
+                    className="btn btn-light btn-sm ms-2 px-3"
+                    to="/register"
+                  >
                     Register
                   </Link>
                 </li>
@@ -89,20 +101,29 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" role="button"
-                    data-bs-toggle="dropdown">
+                  <button
+                    className="nav-link dropdown-toggle btn btn-link p-0"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     <i className="bi bi-person-circle me-1"></i>
-                    {user?.fullName?.split(' ')[0]}
-                  </a>
+                    {user?.fullName?.split(" ")[0]}
+                  </button>
                   <ul className="dropdown-menu dropdown-menu-end">
                     <li>
                       <Link className="dropdown-item" to="/profile">
                         <i className="bi bi-person me-2"></i>My Profile
                       </Link>
                     </li>
-                    <li><hr className="dropdown-divider" /></li>
                     <li>
-                      <button className="dropdown-item text-danger" onClick={handleLogout}>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <button
+                        className="dropdown-item text-danger"
+                        onClick={handleLogout}
+                      >
                         <i className="bi bi-box-arrow-right me-2"></i>Logout
                       </button>
                     </li>
