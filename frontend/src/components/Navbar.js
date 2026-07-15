@@ -41,8 +41,11 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav me-auto">
+        <div
+          className="collapse navbar-collapse align-items-center"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav me-auto align-items-center">
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 <i className="bi bi-house me-1"></i>Home
@@ -69,7 +72,7 @@ const Navbar = () => {
             )}
           </ul>
 
-          <ul className="navbar-nav">
+          <ul className="navbar-nav align-items-center">
             {!isAuthenticated ? (
               <>
                 <li className="nav-item">
